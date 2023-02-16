@@ -8,11 +8,9 @@ public class ConsoleProgress implements Runnable {
         try {
             while (!Thread.currentThread().isInterrupted()) {
                 Thread.sleep(500);
-                System.out.print("\r load: " + process[changeSymbol]);
-                if (changeSymbol == 3) {
+                System.out.print("\r load: " + process[changeSymbol++]);
+                if (changeSymbol == process.length) {
                     changeSymbol = 0;
-                } else {
-                    changeSymbol++;
                 }
             }
         } catch (InterruptedException e) {
