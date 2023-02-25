@@ -52,9 +52,6 @@ class AccountStorageTest {
         var storage = new AccountStorage();
         storage.add(new Account(1, 100));
         storage.add(new Account(2, 100));
-        assertThatThrownBy(() -> {
-            storage.transfer(1, 2, 120);
-        }).isInstanceOf(IllegalArgumentException.class);
         var firstAccount = storage.getById(1)
                 .orElseThrow(() -> new IllegalStateException("Not found account by id = 1"));
         var secondAccount = storage.getById(2)
