@@ -26,12 +26,14 @@ public class AccountStorage {
 
     public synchronized boolean transfer(int fromId, int toId, int amount) {
         boolean result = false;
-        Account accFrom = getById(fromId).get();
-        Account accTo = getById(toId).get();
-        if (amount <= accFrom.amount()) {
-            accounts.replace(accFrom.id(), accFrom, new Account(fromId, accFrom.amount() - amount));
-            accounts.replace(accTo.id(), accTo, new Account(toId, accTo.amount() + amount));
-            result = true;
+        if (getById(fromId).isPresent() && getById(toId).isPresent()) {
+            Account accFrom = getById(fromId).get();
+            Account accTo = getById(toId).get();
+            if (amount <= accFrom.amount()) {
+                accounts.replace(accFrom.id(), accFrom, new Account(fromId, accFrom.amount() - amount));
+                accounts.replace(accTo.id(), accTo, new Account(toId, accTo.amount() + amount));
+                result = true;
+            }
         }
         return result;
     }
