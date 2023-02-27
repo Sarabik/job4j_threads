@@ -66,4 +66,8 @@ public class SimpleBlockingQueue<T> {
         producer.join();
         consumer.join();
     }
+
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
 }
