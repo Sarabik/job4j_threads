@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CASCountTest {
+
     @Test
     public void whenTestCounterWithTwoThreads() throws InterruptedException {
         final CASCount counter = new CASCount();
