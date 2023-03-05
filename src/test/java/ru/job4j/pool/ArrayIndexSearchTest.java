@@ -7,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static ru.job4j.pool.ArrayIndexSearch.findIndex;
 
 class ArrayIndexSearchTest {
+
     @Test
     public void whenSearchString() {
         String[] array = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};

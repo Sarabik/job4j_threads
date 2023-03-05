@@ -4,6 +4,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 public class ArrayIndexSearch<T> extends RecursiveTask<Integer> {
+
     private final T[] array;
     private final int from;
     private final int to;
