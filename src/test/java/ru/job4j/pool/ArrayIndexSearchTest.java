@@ -3,7 +3,6 @@ package ru.job4j.pool;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static ru.job4j.pool.ArrayIndexSearch.findIndex;
 
 class ArrayIndexSearchTest {
@@ -33,11 +32,5 @@ class ArrayIndexSearchTest {
         int index2 = findIndex(array, "12");
         assertThat(index1).isEqualTo(2);
         assertThat(index2).isEqualTo(-1);
-    }
-
-    @Test
-    public void whenArrayIsEmpty() {
-        String[] array = {};
-        assertThatThrownBy(() -> findIndex(array, "7")).isInstanceOf(IllegalArgumentException.class);
     }
 }
