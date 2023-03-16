@@ -10,14 +10,14 @@ class RolColSumTest {
     @Test
     public void whenUseSimpleSum() {
         int[][] matrix = {{1, 2}, {3, 4}};
-        RolColSum.Sums[] expected = {new RolColSum.Sums(3, 4), new RolColSum.Sums(7, 6)};
+        Sums[] expected = {new Sums(3, 4), new Sums(7, 6)};
         assertThat(RolColSum.sum(matrix)).isEqualTo(expected);
     }
 
     @Test
     public void whenUseAsyncSum() throws ExecutionException, InterruptedException {
         int[][] matrix = {{1, 2}, {3, 4}};
-        RolColSum.Sums[] expected = {new RolColSum.Sums(3, 4), new RolColSum.Sums(7, 6)};
+        Sums[] expected = {new Sums(3, 4), new Sums(7, 6)};
         assertThat(RolColSum.asyncSum(matrix)).isEqualTo(expected);
     }
 }
